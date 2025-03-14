@@ -2,11 +2,11 @@ import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
+import { navOptions } from "./navOptions";
 
 interface Props {
   className?: string;
@@ -17,60 +17,25 @@ const styles = {
     "rounded-none border-l-1 border-neutral-950 text-2xl font-light transition-colors duration-500 ease-in-out hover:text-red-300",
 };
 
-export default function LargeNav(props: Props) {
+export default function LargeNav(props: Readonly<Props>) {
   return (
     <div className={cn(props.className, "")}>
       <NavigationMenu>
         <NavigationMenuList>
-          <NavigationMenuItem>
-            <Link to="/">
-              <NavigationMenuLink
+          {navOptions.map((nav, index) => (
+            <NavigationMenuItem key={nav.name}>
+              <Link
                 className={cn(
                   navigationMenuTriggerStyle(),
-                  "border-none",
+                  index === 0 && "border-none",
                   styles.links,
                 )}
+                to={nav.to}
               >
-                Navigation 1
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link to="/">
-              <NavigationMenuLink
-                className={cn(navigationMenuTriggerStyle(), styles.links)}
-              >
-                Navigation 2
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link to="/">
-              <NavigationMenuLink
-                className={cn(navigationMenuTriggerStyle(), styles.links)}
-              >
-                Navigation 3
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link to="/">
-              <NavigationMenuLink
-                className={cn(navigationMenuTriggerStyle(), styles.links)}
-              >
-                Navigation 4
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link to="/">
-              <NavigationMenuLink
-                className={cn(navigationMenuTriggerStyle(), styles.links)}
-              >
-                More
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
+                Lash Extensions
+              </Link>
+            </NavigationMenuItem>
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
     </div>

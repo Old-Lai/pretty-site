@@ -14,6 +14,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
+import { img_manager } from "@/assets";
+
+const nails_imgs = img_manager.get.nails;
 
 export default function Home() {
   return (
@@ -24,27 +27,27 @@ export default function Home() {
           <h1>Pretty</h1>
           <h1>San Franisco</h1>
         </div>
-        <Carousel className="mb-5 w-full max-w-xs p-2 lg:max-w-4xl">
-          <CarouselContent>
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index} className="lg:basis-1/2">
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <span className="text-4xl font-semibold">
-                        {index + 1}
-                      </span>
-                    </CardContent>
-                  </Card>
+        <Carousel className="mb-5 w-full max-w-xs p-2 md:max-w-5xl">
+          <CarouselContent className="flex items-center">
+            {Object.keys(nails_imgs).map((imgObj, index) => (
+              <CarouselItem
+                key={nails_imgs[imgObj].title}
+                className="md:basis-1/2"
+              >
+                <div className="overflow-hidden rounded-lg shadow-sm">
+                  <img src={nails_imgs[imgObj].src} alt="nails img" />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
           <CarouselPrevious
-            className="hidden md:block"
+            className="hidden bg-none md:block md:translate-x-15 lg:translate-x-0"
             aria-label="previous image"
           />
-          <CarouselNext className="hidden md:block" aria-label="next image" />
+          <CarouselNext
+            className="hidden md:block md:-translate-x-15 lg:translate-x-0"
+            aria-label="next image"
+          />
         </Carousel>
       </section>
       <section className="flex h-auto min-h-[40rem] w-full flex-col items-center justify-center p-5 lg:min-h-[50rem]">
@@ -78,7 +81,6 @@ export default function Home() {
                 <div>CA 94112</div>
               </div>
 
-              <div>+1 (415) 863-9900</div>
               <div>info@prettysanfrancisco.com</div>
             </CardContent>
             <CardFooter className="flex justify-center lg:flex-1 lg:items-end">
