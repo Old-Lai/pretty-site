@@ -1,8 +1,8 @@
-import nails1 from "@/assets/nails/nails-1.jpg";
-import nails2 from "@/assets/nails/nails-2.jpg";
-import nails3 from "@/assets/nails/nails-3.jpg";
-import nails4 from "@/assets/nails/nails-4.jpg";
-import nails5 from "@/assets/nails/nails-5.jpg";
+import nails1 from "@/assets/nails/nails-1.webp";
+import nails2 from "@/assets/nails/nails-2.webp";
+import nails3 from "@/assets/nails/nails-3.webp";
+import nails4 from "@/assets/nails/nails-4.webp";
+import nails5 from "@/assets/nails/nails-5.webp";
 
 interface NailsImg {
   src: string;
