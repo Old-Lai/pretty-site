@@ -22,14 +22,14 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center">
       {/*hero section*/}
-      <section className="flex h-auto w-full flex-col items-center justify-center bg-red-100 lg:min-h-[60rem]">
+      <section className="flex h-auto w-full flex-col items-center justify-center bg-(--color-secondary) lg:min-h-[60rem]">
         <div className="m-5 flex flex-col items-center justify-center text-4xl font-bold font-light text-gray-800">
           <h1>Pretty</h1>
           <h1>San Franisco</h1>
         </div>
         <Carousel className="mb-5 w-full max-w-xs p-2 md:max-w-5xl">
           <CarouselContent className="flex items-center">
-            {Object.keys(nails_imgs).map((imgObj, index) => (
+            {Object.keys(nails_imgs).map((imgObj) => (
               <CarouselItem
                 key={nails_imgs[imgObj].title}
                 className="md:basis-1/2"
@@ -58,7 +58,7 @@ export default function Home() {
         </p>
       </section>
       {/*booking section*/}
-      <section className="flex h-auto min-h-[20rem] w-full flex-col items-center justify-center gap-y-6 bg-pink-100 p-5 lg:min-h-[50rem]">
+      <section className="flex h-auto min-h-[20rem] w-full flex-col items-center justify-center gap-y-6 bg-(--color-secondary) p-5 lg:min-h-[50rem]">
         <h1 className="font-smibold text-4xl text-gray-800">
           Book Your service now
         </h1>
@@ -67,7 +67,7 @@ export default function Home() {
         </Button>
       </section>
       {/*location section*/}
-      <section className="flex h-auto min-h-[20rem] w-full bg-yellow-200 lg:min-h-[50rem]">
+      <section className="flex h-auto min-h-[20rem] w-full lg:min-h-[50rem]">
         <div className="flex w-full flex-1 flex-col items-center justify-center gap-y-6 bg-[url(/img/static-bg.jpg)] bg-cover bg-fixed p-5">
           <Card className="w-[calc(100%-1.5rem)] lg:h-full lg:max-w-4xl lg:py-[5rem]">
             <CardHeader>

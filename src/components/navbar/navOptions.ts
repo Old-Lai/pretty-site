@@ -4,6 +4,7 @@ interface NavOption {
 }
 
 export const navOptions: Array<NavOption> = [
+  { name: "Home", to: "/" },
   { name: "Lash Extensions", to: "/lash-extensions" },
   { name: "Permanent Makeup", to: "/permanent-makeup" },
   { name: "Manicure", to: "/manicure" },

@@ -37,8 +37,7 @@ export default function FooterNav() {
         <div className="space-y-4">
           <h3 className="font-semibold lg:text-xl">Contact</h3>
           <ul className="text-muted-foreground space-y-2 text-sm lg:text-lg">
-            <li>123 Beauty Lane, San Francisco, CA 94103</li>
-            <li>(415) 555-0123</li>
+            <li>1735 Ocean Ave, San Francisco, CA 94112</li>
             <li>info@prettysalon.com</li>
           </ul>
         </div>
