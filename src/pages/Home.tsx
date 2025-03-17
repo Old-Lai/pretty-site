@@ -14,6 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 import { img_manager } from "@/assets";
 
 const nails_imgs = img_manager.get.nails;
@@ -27,7 +28,10 @@ export default function Home() {
           <h1>Pretty</h1>
           <h1>San Franisco</h1>
         </div>
-        <Carousel className="mb-5 w-full max-w-xs p-2 md:max-w-5xl">
+        <Carousel
+          className="mb-5 w-full max-w-xs p-2 md:max-w-5xl"
+          plugins={[Autoplay({ delay: 3000 })]}
+        >
           <CarouselContent className="flex items-center">
             {Object.keys(nails_imgs).map((imgObj) => (
               <CarouselItem
