@@ -17,7 +17,6 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import { img_manager } from "@/assets";
 import { LanguageServices } from "@/lib/interfaces";
-import { cn } from "@/lib/utils";
 
 enum Current_Lang {
   English = "en",
@@ -197,12 +196,7 @@ export default function Facial() {
                           {priceStr}
                         </TableCell>
                         {service.bulk && (
-                          <TableCell
-                            className={cn(
-                              "text-right font-semibold",
-                              styles.bulk,
-                            )}
-                          >{`${service.bulk}`}</TableCell>
+                          <TableCell className="text-right font-semibold">{`${service.bulk}`}</TableCell>
                         )}
                       </TableRow>
                     );
