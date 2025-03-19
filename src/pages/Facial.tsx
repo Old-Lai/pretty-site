@@ -1,91 +1,218 @@
-import { Button } from "@/components/ui/button";
-import PlaceHolderImg from "@/components/dev/PlaceHolderImg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import Autoplay from "embla-carousel-autoplay";
+import { img_manager } from "@/assets";
+import { LanguageServices } from "@/lib/interfaces";
 import { cn } from "@/lib/utils";
 
-//workaround for intellesense
+enum Current_Lang {
+  English = "en",
+  Chinese = "zh",
+}
+
+const current_lang = Current_Lang.English;
+const nails_imgs = img_manager.get.facial;
+const nails_service_list: LanguageServices = {
+  en: {
+    "Beauty treatments": [
+      { name: "Valmont Facial Moisturizing", price: 228, bulk: "5 for $999" },
+      { name: "Acne Treatment", price: 280, bulk: "5 for $1250" },
+      {
+        name: "Carbon Peed (once a month)",
+        price: 299,
+        description:
+          "Pigmentation Removal, Shrinking pores, Brightening, Firming",
+      },
+      {
+        name: "Aqua Bubble",
+        price: 228,
+        bulk: "5 for $990",
+        description: "Get rid of blackheads cleaning of pores",
+      },
+      {
+        name: "Laser Skin Rejuvenation",
+        price: 399,
+        bulk: "5 for $1750",
+        description:
+          "Enhance skin tone, Reduce acne marks, Treat acne an sensitivity, Alleviate hyperpigmentation",
+      },
+      {
+        name: "klarity removal - no down time",
+        price: 2800,
+        special: "Includes: 8 facials, 1 set of skincare products",
+      },
+      {
+        name: "Remove melasma",
+        price: 550,
+        description: "Remove ota mole, age spots, and freckles",
+        special: "Once a month, recovery mask on us",
+      },
+      {
+        name: "Sensitive Skin Repair Efficacy",
+        price: 1680,
+        special: "Includes: 5 facials, 1 set of skincare products",
+      },
+      {
+        name: "Hair removal",
+        price: "450-650/year",
+        description: "Underarms, arms, face, thighs, calves, bikini line",
+      },
+      { name: "Millia Seed removal", price: "20/pcs" },
+    ],
+  },
+  zh: {
+    美容项目: [
+      { name: "法尔曼水润保湿护理", price: 228, bulk: "$999（5次）" },
+      { name: "抗痘消炎护理", price: 280, bulk: "$1250（5次）" },
+      {
+        name: "黑脸娃娃 （每月做一次）",
+        price: 299,
+        description: "淡斑，提亮，紧致皮肤，缩小毛孔，深层清洁",
+      },
+      {
+        name: "韩式小气泡",
+        price: 228,
+        bulk: "$990（5次）",
+        description: "祛黑头粉刺，深层清洁皮肤",
+      },
+      {
+        name: "光子嫩肤",
+        price: 399,
+        bulk: "$1750（5次）",
+        description: "提高肤色，淡化痘印，祛痘祛敏，缓解色斑",
+      },
+      {
+        name: "无感祛斑",
+        price: 2800,
+        special: "含：8次美容，1套护肤产品",
+      },
+      {
+        name: "蜂巢皮秒祛斑",
+        price: 550,
+        description: "祛除黄褐斑，痣，老年斑，雀斑",
+        special: "每月做一次，送修复面膜",
+      },
+      {
+        name: "敏感肌修复管理",
+        price: 1680,
+        special: "含：5次美容，1套护肤产品",
+      },
+      {
+        name: "冰点脱毛（每年一次）",
+        price: "450-650",
+        description: "腋下，手臂，面部，大腿，小腿，比基尼",
+      },
+      { name: "祛除肉粒，油粒，扁平疣", price: "-（每粒）$20" },
+    ],
+  },
+};
+
 const className = {
-  header: "text-2xl mb-2 text-[#c79681]",
-  listItem: "flex justify-between h-7",
-  cost: "font-bold",
-  filler: "flex-1 border-b-1 h-1/2 border-dashed border-primary mx-2",
+  card: "md:min-w-[30rem]",
+  card_table: "md:text-lg",
+  description: "text-wrap text-xs md:text-sm text-neutral-500 italic",
+  special: "text-xs md:text-sm text-neutral-500 underline",
 };
 const styles = className;
 
 export default function Facial() {
   return (
-    <div className="flex w-full justify-center bg-(--color-secondary) p-0 text-justify md:p-15">
-      <div className="h-full w-full max-w-5xl rounded-md bg-white py-5 md:rounded-2xl md:px-10 md:py-15 lg:px-20">
-        {/* Hero section */}
-        <section className="bg-(--color-secondary) px-10 py-5 md:bg-white md:px-20">
-          <h1 className="mb-5 text-3xl text-[#fab89d] md:text-5xl">Facial</h1>
-          <h2 className={cn(styles.header)}>Header</h2>
-          <ul className="mb-10 list-disc space-y-2 px-6 md:text-lg">
-            <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              velit orci, fermentum non ex quis, varius suscipit tellus. Proin
-              laoreet posuere lectus eget elementum. Morbi ac nulla nec felis
-              elementum convallis. Nunc eget justo rhoncus.
-            </li>
-            <li>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              velit orci, fermentum non ex quis, varius suscipit tellus. Proin
-              laoreet posuere lectus eget elementum.
-            </li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          </ul>
-          <Button className="min-h-15 w-full text-lg">Book Now</Button>
-        </section>
-        {Array(5)
-          .fill(0)
-          .map((_, i) => (
-            <section
-              className={cn(
-                "flex flex-col items-start justify-center md:flex-row-reverse md:items-center",
-                i === 0 && "md:mt-10",
-                i % 2 && "md:flex-row",
-              )}
-              key={_ + i}
-            >
-              <PlaceHolderImg className="rounded-none md:rounded-md" />
-              <div className="p-6 md:max-w-1/2">
-                <h2 className={cn(styles.header)}>Header</h2>
-                <p className="pb-5">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aenean velit orci, fermentum non ex quis, varius suscipit
-                  tellus. Proin laoreet posuere lectus eget elementum. Morbi ac
-                  nulla nec felis elementum convallis. Nunc eget justo rhoncus.
-                </p>
-                <ul>
-                  <li className={styles.listItem}>
-                    <p>Menu item-1</p>
-                    <div className={styles.filler} />
-                    <p className={styles.cost}>$123</p>
-                  </li>
-                  <li className={styles.listItem}>
-                    <p>Menu item-2 more text</p>
-                    <div className={styles.filler} />
-                    <p className={styles.cost}>$12</p>
-                  </li>
-                  <li className={styles.listItem}>
-                    <p>Menu item-3 text</p>
-                    <div className={styles.filler} />
-                    <p className={styles.cost}>$123</p>
-                  </li>
-                  <li className={styles.listItem}>
-                    <p>Menu item-4</p>
-                    <div className={styles.filler} />
-                    <p className={styles.cost}>$1234</p>
-                  </li>
-                  <li className={styles.listItem}>
-                    <p>Menu item-5</p>
-                    <div className={styles.filler} />
-                    <p className={styles.cost}>$5</p>
-                  </li>
-                </ul>
-              </div>
-            </section>
-          ))}
-      </div>
+    <div className="flex w-full flex-col items-center bg-gradient-to-t from-(--color-secondary) to-white md:p-15">
+      <section className="mb-5">
+        <Carousel
+          className="mx-2 my-5 w-full md:m-0 md:max-w-7xl"
+          plugins={[Autoplay({ delay: 3000 })]}
+        >
+          <CarouselContent className="flex items-center">
+            {Object.keys(nails_imgs).map((imgObj) => (
+              <CarouselItem
+                key={nails_imgs[imgObj].title}
+                className="max-w-fit py-2 md:basis-1/2"
+              >
+                <div className="overflow-hidden rounded-lg shadow-md md:shadow-md">
+                  <img
+                    src={nails_imgs[imgObj].src}
+                    alt="nails img"
+                    className="max-h-[20rem] md:max-h-[40rem]"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious
+            className="hidden bg-none md:block md:translate-x-15 lg:translate-x-0"
+            aria-label="previous image"
+          />
+          <CarouselNext
+            className="hidden md:block md:-translate-x-15 lg:translate-x-0"
+            aria-label="next image"
+          />
+        </Carousel>
+      </section>
+      <section className="mb-5 w-full space-y-5 px-5 md:mb-0 md:max-w-[45rem] md:text-2xl">
+        {Object.keys(nails_service_list[current_lang]).map((service_key) => (
+          <Card className={styles.card} key={service_key}>
+            <CardContent>
+              <CardTitle>{service_key}</CardTitle>
+              <Table className={styles.card_table}>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Sevice</TableHead>
+                    <TableHead className="text-right">Price</TableHead>
+                    <TableHead className="text-right">Bulk Special</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {nails_service_list[current_lang as keyof LanguageServices][
+                    service_key
+                  ].map((service) => {
+                    const priceStr = service.price.toString().startsWith("-")
+                      ? `${service.price.toString().substring(1)}`
+                      : `$${service.price}`;
+
+                    return (
+                      <TableRow key={service.name}>
+                        <TableCell className="flex flex-col">
+                          <p>{service.name}</p>
+                          <p className={styles.description}>
+                            {service.description}
+                          </p>
+                          <p className={styles.special}>{service.special}</p>
+                        </TableCell>
+                        <TableCell className="text-right font-semibold">
+                          {priceStr}
+                        </TableCell>
+                        {service.bulk && (
+                          <TableCell
+                            className={cn(
+                              "text-right font-semibold",
+                              styles.bulk,
+                            )}
+                          >{`${service.bulk}`}</TableCell>
+                        )}
+                      </TableRow>
+                    );
+                  })}
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+        ))}
+      </section>
     </div>
   );
 }
