@@ -15,13 +15,13 @@ import nails14 from "@/assets/nails/nails-14.webp";
 import nails15 from "@/assets/nails/nails-15.webp";
 import nails16 from "@/assets/nails/nails-16.webp";
 
-interface NailsImg {
+interface ImgInfo {
   src: string;
   alt: string;
   title: string;
 }
 
-const nails_img: { [key: string]: NailsImg } = {
+const nails_img: { [key: string]: ImgInfo } = {
   nails1: {
     src: nails1,
     alt: "manicure sample board",
@@ -104,8 +104,84 @@ const nails_img: { [key: string]: NailsImg } = {
   },
 };
 
+import lashes1 from "@/assets/lashes/lashes-1.webp";
+import lashes2 from "@/assets/lashes/lashes-2.webp";
+import lashes3 from "@/assets/lashes/lashes-3.webp";
+import lashes4 from "@/assets/lashes/lashes-4.webp";
+import lashes5 from "@/assets/lashes/lashes-5.webp";
+import lashes6 from "@/assets/lashes/lashes-6.webp";
+import lashes7 from "@/assets/lashes/lashes-7.webp";
+
+const lashes_img: { [key: string]: ImgInfo } = {
+  lashes1: {
+    src: lashes1,
+    alt: "Am image of lash extensions on a woman's eye.",
+    title: "Lashes 1",
+  },
+  lashes2: {
+    src: lashes2,
+    alt: "Am image of lash extensions before and after.",
+    title: "Lashes 2",
+  },
+  lashes3: {
+    src: lashes3,
+    alt: "Am image of lash extensions on a woman's eye.",
+    title: "Lashes 3",
+  },
+  lashes4: {
+    src: lashes4,
+    alt: "Am image of lash extensions on a woman's eye.",
+    title: "Lashes 4",
+  },
+  lashes5: {
+    src: lashes5,
+    alt: "Am image of lash extensions on a woman's eye.",
+    title: "Lashes 5",
+  },
+  lashes6: {
+    src: lashes6,
+    alt: "Am image of lash extensions before and after.",
+    title: "Lashes 6",
+  },
+  lashes7: {
+    src: lashes7,
+    alt: "Am image of lash extensions on a woman's eye.",
+    title: "Lashes 7",
+  },
+};
+
+import facial1 from "@/assets/facial/facial-1.webp";
+import facial2 from "@/assets/facial/facial-2.webp";
+import facial3 from "@/assets/facial/facial-3.webp";
+import facial4 from "@/assets/facial/facial-4.webp";
+
+const facial_img: { [key: string]: ImgInfo } = {
+  facial1: {
+    src: facial1,
+    alt: "An image showcasing different types of red faces caused by sensetive skin.",
+    title: "facial 1",
+  },
+  facial2: {
+    src: facial2,
+    alt: "Am image of a womeb doing spa using valmont product.",
+    title: "facial 2",
+  },
+  facial3: {
+    src: facial3,
+    alt: "Am image of multiple before and after removing blemeshes and blackening.",
+    title: "facial 3",
+  },
+  facial4: {
+    src: facial4,
+    alt: "Am image of an arm showing before and after hair removal",
+    title: "facial 4",
+  },
+};
+
 export const img_manager = {
   get: {
     nails: nails_img,
+    lashes: lashes_img,
+    facial: facial_img,
   },
 };
