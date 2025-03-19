@@ -36,10 +36,14 @@ export default function Home() {
             {Object.keys(nails_imgs).map((imgObj) => (
               <CarouselItem
                 key={nails_imgs[imgObj].title}
-                className="md:basis-1/2"
+                className="max-w-fit py-2 md:basis-1/2"
               >
-                <div className="overflow-hidden rounded-lg shadow-sm">
-                  <img src={nails_imgs[imgObj].src} alt="nails img" />
+                <div className="overflow-hidden rounded-lg shadow-md md:shadow-md">
+                  <img
+                    src={nails_imgs[imgObj].src}
+                    alt="nails img"
+                    className="max-h-[20rem] md:max-h-[40rem]"
+                  />
                 </div>
               </CarouselItem>
             ))}
