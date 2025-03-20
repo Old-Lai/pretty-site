@@ -14,7 +14,6 @@ import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 import { navOptions } from "./navOptions";
-import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 interface Props {
@@ -30,10 +29,6 @@ const styles = className;
 export default function Hamberger(props: Props) {
   const { className } = props;
   const pathname = useLocation().pathname;
-
-  useEffect(() => {
-    console.log(pathname);
-  }, [pathname]);
 
   return (
     <div className={cn(className)}>

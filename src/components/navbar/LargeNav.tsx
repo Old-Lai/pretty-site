@@ -8,7 +8,6 @@ import {
 import { Link } from "react-router-dom";
 import { navOptions } from "./navOptions";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
 interface Props {
   className?: string;
@@ -23,10 +22,6 @@ const styles = className;
 
 export default function LargeNav(props: Readonly<Props>) {
   const pathname = useLocation().pathname;
-
-  useEffect(() => {
-    console.log(pathname);
-  }, [pathname]);
 
   return (
     <div className={cn(props.className, "")}>

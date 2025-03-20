@@ -1,10 +1,15 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import NavBar from "../components/navbar/NavBar";
-import FooterNav from "@/components/FooterNav";
+import FooterNav from "@/components/navbar/FooterNav";
+import { useEffect } from "react";
 
 export default function Root() {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
-    <div className="h-screen w-screen overflow-x-hidden">
+    <div className="min-h-screen min-w-screen overflow-x-hidden">
       <header>
         <NavBar />
       </header>
