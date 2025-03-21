@@ -174,7 +174,7 @@ const facial_img: { [key: string]: ImgInfo } = {
   },
 };
 
-import brows1Before from "@/assets/brows/brows-1-before.webp";
+// import brows1Before from "@/assets/brows/brows-1-before.webp";
 import brows1After from "@/assets/brows/brows-1-after.webp";
 import brows2 from "@/assets/brows/brows-2.webp";
 import brows3 from "@/assets/brows/brows-3.webp";

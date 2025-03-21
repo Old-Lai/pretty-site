@@ -76,15 +76,6 @@ const brows_obj: LanguageServices = {
   },
 };
 
-//workaround for intellesense
-const className = {
-  header: "text-2xl mb-2 text-[#c79681]",
-  listItem: "flex justify-between h-7",
-  cost: "font-bold",
-  filler: "flex-1 border-b-1 h-1/2 border-dashed border-primary mx-2",
-};
-const styles = className;
-
 export default function PermanentMakeup() {
   return (
     <div className="flex w-full flex-col items-center justify-center bg-(--color-secondary) p-0 text-justify md:space-y-10 md:p-15">
