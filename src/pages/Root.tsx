@@ -9,7 +9,7 @@ export default function Root() {
     window.scrollTo(0, 0);
   }, [location]);
   return (
-    <div className="min-h-screen min-w-screen overflow-x-hidden">
+    <div className="min-h-full w-full">
       <header>
         <NavBar />
       </header>

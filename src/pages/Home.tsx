@@ -60,7 +60,7 @@ export default function Home() {
       </section>
       <section className="flex h-auto min-h-[40rem] w-full flex-col items-center justify-center p-5 lg:min-h-[50rem]">
         <h1 className="font-smibold text-3xl text-gray-800">About us</h1>
-        <p className="mt-5 text-xl font-medium text-gray-700 lg:max-w-4xl">
+        <p className="mt-5 text-center text-xl font-medium text-gray-700 lg:max-w-4xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, quas
           voluptates?
         </p>

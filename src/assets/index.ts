@@ -1,3 +1,5 @@
+import { ImgInfo } from "@/lib/interfaces";
+
 import nails1 from "@/assets/nails/nails-1.webp";
 import nails2 from "@/assets/nails/nails-2.webp";
 import nails3 from "@/assets/nails/nails-3.webp";
@@ -14,12 +16,6 @@ import nails13 from "@/assets/nails/nails-13.webp";
 import nails14 from "@/assets/nails/nails-14.webp";
 import nails15 from "@/assets/nails/nails-15.webp";
 import nails16 from "@/assets/nails/nails-16.webp";
-
-interface ImgInfo {
-  src: string;
-  alt: string;
-  title: string;
-}
 
 const nails_img: { [key: string]: ImgInfo } = {
   nails1: {
@@ -178,10 +174,51 @@ const facial_img: { [key: string]: ImgInfo } = {
   },
 };
 
+import brows1Before from "@/assets/brows/brows-1-before.webp";
+import brows1After from "@/assets/brows/brows-1-after.webp";
+import brows2 from "@/assets/brows/brows-2.webp";
+import brows3 from "@/assets/brows/brows-3.webp";
+import brows4 from "@/assets/brows/brows-4.webp";
+import brows5 from "@/assets/brows/brows-5.webp";
+
+const brows_img: { [key: string]: ImgInfo } = {
+  // brows1a: {
+  //   src: brows1Before,
+  //   alt: "An image of a brows before treatment.",
+  //   title: "Brows 1 Before",
+  // },
+  brows1: {
+    src: brows1After,
+    alt: "An image of a brows after treatment.",
+    title: "Brows 1 After",
+  },
+  brows2: {
+    src: brows2,
+    alt: "An image of a brows treatment example",
+    title: "Brows 2",
+  },
+  brows3: {
+    src: brows3,
+    alt: "An image of a brows treatment example",
+    title: "Brows 3",
+  },
+  brows4: {
+    src: brows4,
+    alt: "An image of a brows treatment example",
+    title: "Brows 4",
+  },
+  brows5: {
+    src: brows5,
+    alt: "An image of a brows treatment example",
+    title: "Brows 5",
+  },
+};
+
 export const img_manager = {
   get: {
     nails: nails_img,
     lashes: lashes_img,
     facial: facial_img,
+    brows: brows_img,
   },
 };

@@ -23,7 +23,7 @@ enum Current_Lang {
   Chinese = "zh",
 }
 
-const current_lang = Current_Lang.English;
+const current_lang = Current_Lang.Chinese;
 const lashes_imgs = img_manager.get.lashes;
 const nails_service_list: LanguageServices = {
   en: {
@@ -31,29 +31,41 @@ const nails_service_list: LanguageServices = {
       { name: "Classic Single", price: 90 },
       { name: "2D, 3D", price: 99 },
       {
-        name: "Custom Design (Light Baby Curve, Fairy Lash, Sunflower)",
+        name: "Custom Design",
         price: 128,
+        // description: "(Light Baby Curve, Fairy Lash, Sunflower)",
       },
       { name: "Volume / Wispy", price: 168 },
       { name: "Keratin Lash Lift", price: 88 },
       { name: "Under Lahses", price: 30 },
       { name: "Removal", price: 20 },
       {
-        name: "Refill - Within 2 weeks - Exclusive for members",
+        name: "Refill",
         price: "-50% off",
+        description: "Within 2 weeks",
+        special: "Exclusive for members",
       },
     ],
   },
   zh: {
     nail_services: [
       { name: "单根", price: 90 },
-      { name: "2D, 3D（YY，三叶草）", price: 99 },
-      { name: "定制设计（婴儿湾，仙女款，太阳花）", price: 128 },
+      { name: "2D, 3D", price: 99, description: "(YY，三叶草)" },
+      {
+        name: "定制设计",
+        price: 128,
+        description: "(婴儿湾，仙女款，太阳花)",
+      },
       { name: "欧美浓密款", price: 168 },
       { name: "角蛋白翘睫", price: 88 },
       { name: "下睫毛", price: 30 },
       { name: "卸睫毛", price: 20 },
-      { name: "补睫毛(两周内）-仅限会员", price: "-5折优惠" },
+      {
+        name: "补睫毛",
+        price: "-5折优惠",
+        description: "(两周内）",
+        special: "仅限会员",
+      },
     ],
   },
 };
@@ -120,7 +132,15 @@ export default function LashExtensions() {
 
                     return (
                       <TableRow key={service.name}>
-                        <TableCell>{service.name}</TableCell>
+                        <TableCell>
+                          <div>
+                            <p>{service.name}</p>
+                            <p className="text-sm text-neutral-600">
+                              {service.description}
+                            </p>
+                            <p className="text-xs">{service.special}</p>
+                          </div>
+                        </TableCell>
                         <TableCell className="text-right font-semibold">
                           {priceStr}
                         </TableCell>
