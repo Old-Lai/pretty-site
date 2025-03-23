@@ -22,3 +22,7 @@ export enum Available_Lang {
   English = "en",
   Chinese = "zh",
 }
+
+export interface OutletContext {
+  current_lang: Available_Lang;
+}

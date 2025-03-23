@@ -214,11 +214,65 @@ const brows_img: { [key: string]: ImgInfo } = {
   },
 };
 
+import eyeline1 from "@/assets/permanent/permanent-eyeline-1.webp";
+import eyeline2 from "@/assets/permanent/permanent-eyeline-2.webp";
+import eyeline3 from "@/assets/permanent/permanent-eyeline-3.webp";
+
+const eyeline_img = {
+  eyeline1: {
+    src: eyeline1,
+    alt: "An image of a eyeline after treatment.",
+    title: "eyeline 1 After",
+  },
+  eyeline2: {
+    src: eyeline2,
+    alt: "An image of a eyeline after treatment.",
+    title: "eyeline 2 After",
+  },
+  eyeline3: {
+    src: eyeline3,
+    alt: "An image of a eyeline after treatment.",
+    title: "eyeline 3 After",
+  },
+};
+
+import hairline1 from "@/assets/permanent/permanent-hairline-1.webp";
+import hairline2 from "@/assets/permanent/permanent-hairline-3.webp";
+import hairline3 from "@/assets/permanent/permanent-hairline-5.webp";
+import hairline4 from "@/assets/permanent/permanent-hairline-7.webp";
+
+const hairline_img = {
+  hairline1: {
+    src: hairline1,
+    alt: "An image of a headline after treatment.",
+    title: "hairline 1 after",
+  },
+  hairline2: {
+    src: hairline2,
+    alt: "An image of a headline after treatment.",
+    title: "hairline 2 after",
+  },
+  hairline3: {
+    src: hairline3,
+    alt: "An image of a headline after treatment.",
+    title: "hairline 3 after",
+  },
+  hairline4: {
+    src: hairline4,
+    alt: "An image of a headline after treatment.",
+    title: "hairline 4 after",
+  },
+};
+
 export const img_manager = {
   get: {
     nails: nails_img,
     lashes: lashes_img,
     facial: facial_img,
-    brows: brows_img,
+    permanent: {
+      brows: brows_img,
+      eyeline: eyeline_img,
+      hairline: hairline_img,
+    },
   },
 };

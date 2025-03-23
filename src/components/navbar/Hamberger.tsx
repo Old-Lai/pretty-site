@@ -15,9 +15,11 @@ import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 import { navOptions } from "./navOptions";
 import { useLocation } from "react-router-dom";
+import { Available_Lang } from "@/lib/interfaces";
 
 interface Props {
   className?: string;
+  current_lang: Available_Lang;
 }
 
 const className = {
@@ -27,7 +29,7 @@ const className = {
 const styles = className;
 
 export default function Hamberger(props: Props) {
-  const { className } = props;
+  const { className, current_lang } = props;
   const pathname = useLocation().pathname;
 
   return (
@@ -42,7 +44,7 @@ export default function Hamberger(props: Props) {
         <DrawerContent>
           <NavigationMenu orientation="vertical" className="mx-5 my-10 flex-0">
             <NavigationMenuList className="flex-col items-start space-y-3 space-x-0">
-              {navOptions.map((nav) => (
+              {navOptions[current_lang].map((nav) => (
                 <NavigationMenuItem key={nav.name}>
                   <Link
                     className={cn(

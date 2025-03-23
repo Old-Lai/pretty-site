@@ -16,15 +16,46 @@ import {
 import { ChevronRight } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import { img_manager } from "@/assets";
+import { useOutletContext } from "react-router-dom";
+import { OutletContext } from "@/lib/interfaces";
+
+const text_obj = {
+  en: {
+    about_us: {
+      title: "About Us",
+      descripton:
+        "PRETTY is your go-to destination for all things beauty. We specialize in creating stunning, natural looks with the highest quality service—offering expert manicure/pedicure, eyelash extension, facial beauty services, and hair embroidery.",
+    },
+    book_now: { title: "Book Your service now", button: "Book Now" },
+    find_us: {
+      title: "Our Location",
+      button: "Contact Us",
+    },
+  },
+  zh: {
+    about_us: {
+      title: "关于我们",
+      descripton:
+        "我们是一家专业的美甲、美睫、美容及纹绣服务公司——PRETTY，专注于提供高品质的美甲设计与美容护理服务，用心满足每位顾客的需求，让您展现自信与美丽！",
+    },
+    book_now: { title: "体验PRETTY的专业美甲与美容服务！", button: "立即预约" },
+    find_us: {
+      title: "位置与联络",
+      button: "联系我们",
+    },
+  },
+};
 
 const nails_imgs = img_manager.get.nails;
 
 export default function Home() {
+  const context: OutletContext = useOutletContext();
+  const current_lang = context.current_lang;
   return (
     <div className="flex flex-col items-center justify-center">
       {/*hero section*/}
-      <section className="flex h-auto w-full flex-col items-center justify-center bg-(--color-secondary) lg:min-h-[60rem]">
-        <div className="m-5 flex flex-col items-center justify-center text-4xl font-bold font-light text-gray-800">
+      <section className="flex h-auto w-full flex-col items-center justify-center bg-linear-to-b from-white to-(--color-secondary) lg:min-h-[60rem]">
+        <div className="m-5 flex flex-col items-center justify-center text-4xl font-bold text-gray-800">
           <h1>Pretty</h1>
           <h1>San Franisco</h1>
         </div>
@@ -58,20 +89,21 @@ export default function Home() {
           />
         </Carousel>
       </section>
-      <section className="flex h-auto min-h-[40rem] w-full flex-col items-center justify-center p-5 lg:min-h-[50rem]">
-        <h1 className="font-smibold text-3xl text-gray-800">About us</h1>
-        <p className="mt-5 text-center text-xl font-medium text-gray-700 lg:max-w-4xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, quas
-          voluptates?
+      <section className="flex h-auto min-h-[40rem] w-full flex-col items-center justify-center bg-linear-to-b from-(--color-secondary) via-white to-(--color-secondary) p-5 lg:min-h-[50rem]">
+        <h1 className="font-smibold text-3xl text-gray-800 md:text-5xl">
+          {text_obj[current_lang].about_us.title}
+        </h1>
+        <p className="mt-5 text-center text-xl font-medium text-gray-700 md:max-w-4xl md:text-3xl">
+          {text_obj[current_lang].about_us.descripton}
         </p>
       </section>
       {/*booking section*/}
-      <section className="flex h-auto min-h-[20rem] w-full flex-col items-center justify-center gap-y-6 bg-(--color-secondary) p-5 lg:min-h-[50rem]">
-        <h1 className="font-smibold text-4xl text-gray-800">
-          Book Your service now
+      <section className="flex h-auto min-h-[20rem] w-full flex-col items-center justify-center gap-y-6 bg-(--color-secondary) bg-linear-to-b from-(--color-secondary) to-white p-5 lg:min-h-[50rem]">
+        <h1 className="font-smibold w-full text-center text-2xl text-gray-800 md:text-4xl">
+          {text_obj[current_lang].book_now.title}
         </h1>
         <Button className="h-auto w-60 rounded-sm text-2xl font-semibold">
-          Book Now
+          {text_obj[current_lang].book_now.button}
         </Button>
       </section>
       {/*location section*/}
@@ -80,7 +112,7 @@ export default function Home() {
           <Card className="w-[calc(100%-1.5rem)] lg:h-full lg:max-w-4xl lg:py-[5rem]">
             <CardHeader>
               <CardTitle className="text-center text-2xl lg:mb-6 lg:text-5xl">
-                Our Location
+                {text_obj[current_lang].find_us.title}
               </CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col gap-y-3 text-center lg:gap-y-[3rem] lg:text-2xl">
@@ -93,7 +125,7 @@ export default function Home() {
             </CardContent>
             <CardFooter className="flex justify-center lg:flex-1 lg:items-end">
               <Button className="h-auto w-60 rounded-sm text-2xl font-normal lg:w-[30rem] lg:text-4xl">
-                <p>Contact Us</p>
+                <p>{text_obj[current_lang].find_us.button}</p>
                 <ChevronRight className="size-6 lg:size-9" />
               </Button>
             </CardFooter>

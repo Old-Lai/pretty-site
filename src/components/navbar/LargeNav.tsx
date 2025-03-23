@@ -8,9 +8,11 @@ import {
 import { Link } from "react-router-dom";
 import { navOptions } from "./navOptions";
 import { useLocation } from "react-router-dom";
+import { Available_Lang } from "@/lib/interfaces";
 
 interface Props {
   className?: string;
+  current_lang: Available_Lang;
 }
 
 //intellesense workaround
@@ -21,13 +23,13 @@ const className = {
 const styles = className;
 
 export default function LargeNav(props: Readonly<Props>) {
+  const { className, current_lang } = props;
   const pathname = useLocation().pathname;
-
   return (
-    <div className={cn(props.className, "")}>
+    <div className={cn(className, "")}>
       <NavigationMenu>
         <NavigationMenuList>
-          {navOptions.map((nav, index) => (
+          {navOptions[current_lang].map((nav, index) => (
             <NavigationMenuItem key={nav.name}>
               <Link
                 className={cn(

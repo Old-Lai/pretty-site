@@ -16,14 +16,22 @@ import {
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import { img_manager } from "@/assets";
-import { LanguageServices } from "@/lib/interfaces";
+import { LanguageServices, OutletContext } from "@/lib/interfaces";
+import { useOutletContext } from "react-router-dom";
 
-enum Current_Lang {
-  English = "en",
-  Chinese = "zh",
-}
+const text_obj = {
+  en: {
+    service: "Service",
+    price: "Price",
+    bulk: "Bulk Special",
+  },
+  zh: {
+    service: "项目",
+    price: "价格",
+    bulk: "套餐优惠",
+  },
+};
 
-const current_lang = Current_Lang.English;
 const nails_imgs = img_manager.get.facial;
 const nails_service_list: LanguageServices = {
   en: {
@@ -129,6 +137,8 @@ const className = {
 const styles = className;
 
 export default function Facial() {
+  const context: OutletContext = useOutletContext();
+  const current_lang = context.current_lang;
   return (
     <div className="flex w-full flex-col items-center bg-gradient-to-t from-(--color-secondary) to-white md:p-15">
       <section className="mb-5">
@@ -170,9 +180,13 @@ export default function Facial() {
               <Table className={styles.card_table}>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Sevice</TableHead>
-                    <TableHead className="text-right">Price</TableHead>
-                    <TableHead className="text-right">Bulk Special</TableHead>
+                    <TableHead>{text_obj[current_lang].service}</TableHead>
+                    <TableHead className="text-right">
+                      {text_obj[current_lang].price}
+                    </TableHead>
+                    <TableHead className="text-right">
+                      {text_obj[current_lang].bulk}
+                    </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>

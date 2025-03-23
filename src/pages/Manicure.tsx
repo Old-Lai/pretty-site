@@ -16,14 +16,20 @@ import {
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import { img_manager } from "@/assets";
-import { LanguageServices } from "@/lib/interfaces";
+import { LanguageServices, OutletContext } from "@/lib/interfaces";
+import { useOutletContext } from "react-router-dom";
 
-enum Current_Lang {
-  English = "en",
-  Chinese = "zh",
-}
+const text_obj = {
+  en: {
+    service: "Service",
+    price: "Price",
+  },
+  zh: {
+    service: "项目",
+    price: "价格",
+  },
+};
 
-const current_lang = Current_Lang.English;
 const nails_imgs = img_manager.get.nails;
 const nails_service_list: LanguageServices = {
   en: {
@@ -51,7 +57,7 @@ const nails_service_list: LanguageServices = {
     ],
   },
   zh: {
-    nail_services: [
+    美甲服务: [
       { name: "普通胶油", price: 35 },
       { name: "建构（单色）", price: 60 },
       { name: "足部-单色Gels（包含普通修脚）", price: 60 },
@@ -60,7 +66,7 @@ const nails_service_list: LanguageServices = {
       { name: "太空舱手部护理", price: 38 },
       { name: "德国贵妇LCN足部护理", price: 65 },
     ],
-    nail_design: [
+    美甲设计: [
       { name: "猫眼", price: 20 },
       { name: "魔法粉", price: 20 },
       { name: "法式", price: 20 },
@@ -68,7 +74,7 @@ const nails_service_list: LanguageServices = {
       { name: "渐变", price: 20 },
       { name: "晕染", price: 30 },
     ],
-    others: [
+    其他项目: [
       { name: "单个甲片", price: "8 /per" },
       { name: "单颗钻石", price: "5-10 /per" },
       { name: "饰品", price: 5 },
@@ -83,6 +89,8 @@ const className = {
 const styles = className;
 
 export default function Manicure() {
+  const context: OutletContext = useOutletContext();
+  const current_lang = context.current_lang;
   return (
     <div className="flex w-full flex-col items-center bg-gradient-to-t from-(--color-secondary) to-white md:p-15">
       <section className="mb-5">
@@ -124,8 +132,10 @@ export default function Manicure() {
               <Table className={styles.card_table}>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Sevice</TableHead>
-                    <TableHead className="text-right">Price</TableHead>
+                    <TableHead>{text_obj[current_lang].service}</TableHead>
+                    <TableHead className="text-right">
+                      {text_obj[current_lang].price}
+                    </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>

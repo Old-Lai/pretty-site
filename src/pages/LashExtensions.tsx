@@ -16,14 +16,20 @@ import {
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import { img_manager } from "@/assets";
-import { LanguageServices } from "@/lib/interfaces";
+import { LanguageServices, OutletContext } from "@/lib/interfaces";
+import { useOutletContext } from "react-router-dom";
 
-enum Current_Lang {
-  English = "en",
-  Chinese = "zh",
-}
+const text_obj = {
+  en: {
+    service: "Service",
+    price: "Price",
+  },
+  zh: {
+    service: "项目",
+    price: "价格",
+  },
+};
 
-const current_lang = Current_Lang.Chinese;
 const lashes_imgs = img_manager.get.lashes;
 const nails_service_list: LanguageServices = {
   en: {
@@ -48,7 +54,7 @@ const nails_service_list: LanguageServices = {
     ],
   },
   zh: {
-    nail_services: [
+    美睫服务: [
       { name: "单根", price: 90 },
       { name: "2D, 3D", price: 99, description: "(YY，三叶草)" },
       {
@@ -77,6 +83,8 @@ const className = {
 const styles = className;
 
 export default function LashExtensions() {
+  const context: OutletContext = useOutletContext();
+  const current_lang = context.current_lang;
   return (
     <div className="flex w-full flex-col items-center bg-gradient-to-t from-(--color-secondary) to-white md:p-15">
       <section className="mb-5">
@@ -118,8 +126,10 @@ export default function LashExtensions() {
               <Table className={styles.card_table}>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Sevice</TableHead>
-                    <TableHead className="text-right">Price</TableHead>
+                    <TableHead>{text_obj[current_lang].service}</TableHead>
+                    <TableHead className="text-right">
+                      {text_obj[current_lang].price}
+                    </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
