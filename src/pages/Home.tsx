@@ -6,14 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { ChevronRight } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import { img_manager } from "@/assets";
 import { useOutletContext } from "react-router-dom";
@@ -103,15 +96,17 @@ export default function Home() {
           {text_obj[current_lang].book_now.title}
         </h1>
         <Button className="h-auto w-60 rounded-sm text-2xl font-semibold">
-          {text_obj[current_lang].book_now.button}
+          <a href="https://app.squareup.com/appointments/book/vlkhfmk4s1ev88/LZM0ZZ4C44VAV/start">
+            {text_obj[current_lang].book_now.button}
+          </a>
         </Button>
       </section>
       {/*location section*/}
       <section className="flex h-auto min-h-[20rem] w-full lg:min-h-[50rem]">
         <div className="flex w-full flex-1 flex-col items-center justify-center gap-y-6 bg-[url(/img/static-bg.jpg)] bg-cover bg-fixed p-5">
-          <Card className="w-[calc(100%-1.5rem)] lg:h-full lg:max-w-4xl lg:py-[5rem]">
-            <CardHeader>
-              <CardTitle className="text-center text-2xl lg:mb-6 lg:text-5xl">
+          <Card className="w-[calc(100%-1.5rem)] items-center justify-center lg:h-full lg:max-w-4xl lg:py-[5rem]">
+            <CardHeader className="w-full">
+              <CardTitle className="text-center text-2xl md:mb-6 md:text-5xl">
                 {text_obj[current_lang].find_us.title}
               </CardTitle>
             </CardHeader>
@@ -123,12 +118,6 @@ export default function Home() {
 
               <div>info@prettysanfrancisco.com</div>
             </CardContent>
-            <CardFooter className="flex justify-center lg:flex-1 lg:items-end">
-              <Button className="h-auto w-60 rounded-sm text-2xl font-normal lg:w-[30rem] lg:text-4xl">
-                <p>{text_obj[current_lang].find_us.button}</p>
-                <ChevronRight className="size-6 lg:size-9" />
-              </Button>
-            </CardFooter>
           </Card>
         </div>
       </section>
