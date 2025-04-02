@@ -50,6 +50,7 @@ export default function Home() {
       <section className="flex h-auto w-full flex-col items-center justify-center bg-linear-to-b from-white to-(--color-secondary) lg:min-h-[60rem]">
         <div className="m-5 flex flex-col items-center justify-center text-4xl font-bold text-gray-800">
           <h1>Pretty</h1>
+          <div className="h-1 w-[calc(100%+2rem)] border-b-[1px]" />
           <h1>San Franisco</h1>
         </div>
         <Carousel
@@ -86,6 +87,7 @@ export default function Home() {
         <h1 className="font-smibold text-3xl text-gray-800 md:text-5xl">
           {text_obj[current_lang].about_us.title}
         </h1>
+        <div className="h-1 w-[calc(100%+2rem)] max-w-[20rem] border-b-[1px]" />
         <p className="mt-5 text-center text-xl font-medium text-gray-700 md:max-w-4xl md:text-3xl">
           {text_obj[current_lang].about_us.descripton}
         </p>
@@ -95,7 +97,10 @@ export default function Home() {
         <h1 className="font-smibold w-full text-center text-2xl text-gray-800 md:text-4xl">
           {text_obj[current_lang].book_now.title}
         </h1>
-        <Button className="h-auto w-60 rounded-sm text-2xl font-semibold">
+        <Button
+          className="h-auto w-60 rounded-sm text-2xl font-semibold"
+          disabled
+        >
           <a href="https://app.squareup.com/appointments/book/vlkhfmk4s1ev88/LZM0ZZ4C44VAV/start">
             {text_obj[current_lang].book_now.button}
           </a>
