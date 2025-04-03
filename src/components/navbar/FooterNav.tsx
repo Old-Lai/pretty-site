@@ -75,7 +75,7 @@ export default function FooterNav(props: Readonly<Props>) {
           </h3>
           <ul className="text-muted-foreground space-y-2 text-sm lg:text-lg">
             <li>1735 Ocean Ave, San Francisco, CA 94112</li>
-            <li>info@prettysalon.com</li>
+            <li>info@prettyartnailbeautyspa.com</li>
           </ul>
         </div>
       </div>

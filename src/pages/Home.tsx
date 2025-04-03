@@ -121,7 +121,7 @@ export default function Home() {
                 <div>CA 94112</div>
               </div>
 
-              <div>info@prettysanfrancisco.com</div>
+              <div>info@prettyartnailbeautyspa.com</div>
             </CardContent>
           </Card>
         </div>
