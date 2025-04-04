@@ -5,17 +5,15 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
 FROM base AS build
-RUN mkdir /app
-COPY package.json /app
-COPY pnpm-lock.yaml /app
 WORKDIR /app
+COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
-
 COPY . .
 RUN pnpm build
 
-#production stage
+# Production Stage
 FROM nginx:stable-alpine AS production
 COPY --from=build /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
