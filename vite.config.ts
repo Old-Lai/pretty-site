@@ -17,4 +17,5 @@ export default defineConfig({
   preview: {
     allowedHosts: true,
   },
+  base: "/", // ✅ should be just root
 });
