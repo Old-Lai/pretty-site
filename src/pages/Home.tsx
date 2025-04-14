@@ -97,10 +97,7 @@ export default function Home() {
         <h1 className="font-smibold w-full text-center text-2xl text-gray-800 md:text-4xl">
           {text_obj[current_lang].book_now.title}
         </h1>
-        <Button
-          className="h-auto w-60 rounded-sm text-2xl font-semibold"
-          disabled
-        >
+        <Button className="h-auto w-60 rounded-sm text-2xl font-semibold">
           <a href="https://app.squareup.com/appointments/book/vlkhfmk4s1ev88/LZM0ZZ4C44VAV/start">
             {text_obj[current_lang].book_now.button}
           </a>
