@@ -1,4 +1,4 @@
-#PrettyArtNailBeautySpa
+# PrettyArtNailBeautySpa
 A beauty spa website showcasing service options, costs, location, image resources.
 -Featuring:
   -Square appointment intergration
