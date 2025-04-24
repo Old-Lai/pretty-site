@@ -1,5 +1,5 @@
 # PrettyArtNailBeautySpa
-PrettyArtNailBeautySpa.com<br/><br/>
+https://www.PrettyArtNailBeautySpa.com<br/><br/>
 A beauty spa website showcasing service options, costs, location, image resources.<br/><br/>
 __-Featuring:__<br/>
   _-Square appointment intergration_<br/>
