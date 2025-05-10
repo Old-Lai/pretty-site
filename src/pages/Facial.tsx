@@ -78,7 +78,7 @@ const nails_service_list: LanguageServices = {
         price: "450-650/year",
         description: "Underarms, arms, face, thighs, calves, bikini line",
       },
-      { name: "Millia Seed removal", price: "20/pcs" },
+      { name: "Millia Seed removal", price: "- From $110" },
     ],
   },
   zh: {
@@ -123,7 +123,7 @@ const nails_service_list: LanguageServices = {
         price: "450-650",
         description: "腋下，手臂，面部，大腿，小腿，比基尼",
       },
-      { name: "祛除肉粒，油粒，扁平疣", price: "-（每粒）$20" },
+      { name: "祛除肉粒，油粒，扁平疣", price: "- $110 起" },
     ],
   },
 };

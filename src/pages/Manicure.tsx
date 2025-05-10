@@ -34,13 +34,13 @@ const nails_imgs = img_manager.get.nails;
 const nails_service_list: LanguageServices = {
   en: {
     "Nail Services": [
-      { name: "Regular Gel", price: 35 },
-      { name: "Building Gel", price: 60 },
-      { name: "Gel Pedicure", price: 60 },
+      { name: "Regular Gel", price: 48 },
+      { name: "Building Gel", price: 65 },
+      { name: "Gel Pedicure", price: 85 },
       { name: "Extension", price: 80 },
       { name: "Removal", price: 15 },
-      { name: "Hand Spa (anion capsule)", price: 38 },
-      { name: "Germany LCN Foot Spa", price: 65 },
+      { name: "Hand Spa (anion capsule)", price: 68 },
+      { name: "Germany LCN Foot Spa", price: 88 },
     ],
     "Nail Design": [
       { name: "Cat Eye", price: 20 },
@@ -58,13 +58,13 @@ const nails_service_list: LanguageServices = {
   },
   zh: {
     美甲服务: [
-      { name: "普通胶油", price: 35 },
-      { name: "建构（单色）", price: 60 },
-      { name: "足部-单色Gels（包含普通修脚）", price: 60 },
+      { name: "普通胶油", price: 48 },
+      { name: "建构（单色）", price: 65 },
+      { name: "足部-单色Gels（包含普通修脚）", price: 85 },
       { name: "甲片延长", price: 80 },
       { name: "卸甲", price: 15 },
-      { name: "太空舱手部护理", price: 38 },
-      { name: "德国贵妇LCN足部护理", price: 65 },
+      { name: "太空舱手部护理", price: 68 },
+      { name: "德国贵妇LCN足部护理", price: 88 },
     ],
     美甲设计: [
       { name: "猫眼", price: 20 },

@@ -34,16 +34,16 @@ const lashes_imgs = img_manager.get.lashes;
 const nails_service_list: LanguageServices = {
   en: {
     "Lash Services": [
-      { name: "Classic Single", price: 90 },
-      { name: "2D, 3D", price: 99 },
+      { name: "Classic Single", price: 99 },
+      { name: "2D, 3D", price: 128 },
       {
         name: "Custom Design",
-        price: 128,
+        price: 158,
         // description: "(Light Baby Curve, Fairy Lash, Sunflower)",
       },
-      { name: "Volume / Wispy", price: 168 },
-      { name: "Keratin Lash Lift", price: 88 },
-      { name: "Under Lahses", price: 30 },
+      { name: "Volume / Wispy", price: 188 },
+      { name: "Keratin Lash Lift", price: 108 },
+      { name: "Under Lahses", price: 50 },
       { name: "Removal", price: 20 },
       {
         name: "Refill",
@@ -55,16 +55,16 @@ const nails_service_list: LanguageServices = {
   },
   zh: {
     美睫服务: [
-      { name: "单根", price: 90 },
-      { name: "2D, 3D", price: 99, description: "(YY，三叶草)" },
+      { name: "单根", price: 99 },
+      { name: "2D, 3D", price: 128, description: "(YY，三叶草)" },
       {
         name: "定制设计",
-        price: 128,
+        price: 158,
         description: "(婴儿湾，仙女款，太阳花)",
       },
-      { name: "欧美浓密款", price: 168 },
-      { name: "角蛋白翘睫", price: 88 },
-      { name: "下睫毛", price: 30 },
+      { name: "欧美浓密款", price: 188 },
+      { name: "角蛋白翘睫", price: 108 },
+      { name: "下睫毛", price: 50 },
       { name: "卸睫毛", price: 20 },
       {
         name: "补睫毛",
