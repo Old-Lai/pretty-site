@@ -4,7 +4,7 @@ import {
   NotFound404,
   Home,
   LashExtensions,
-  PermanentMakeup,
+  // PermanentMakeup,
   Manicure,
   Facial,
 } from "./pages";
