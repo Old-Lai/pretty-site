@@ -50,24 +50,24 @@ const nails_service_list: LanguageServices = {
         bulk: "5 for $990",
         description: "Get rid of blackheads cleaning of pores",
       },
-      {
-        name: "Laser Skin Rejuvenation",
-        price: 399,
-        bulk: "5 for $1750",
-        description:
-          "Enhance skin tone, Reduce acne marks, Treat acne an sensitivity, Alleviate hyperpigmentation",
-      },
+      // {
+      //   name: "Laser Skin Rejuvenation",
+      //   price: 399,
+      //   bulk: "5 for $1750",
+      //   description:
+      //     "Enhance skin tone, Reduce acne marks, Treat acne an sensitivity, Alleviate hyperpigmentation",
+      // },
       {
         name: "klarity removal - no down time",
         price: 2800,
         special: "Includes: 8 facials, 1 set of skincare products",
       },
-      {
-        name: "Remove melasma",
-        price: 550,
-        description: "Remove ota mole, age spots, and freckles",
-        special: "Once a month, recovery mask on us",
-      },
+      // {
+      //   name: "Remove melasma",
+      //   price: 550,
+      //   description: "Remove ota mole, age spots, and freckles",
+      //   special: "Once a month, recovery mask on us",
+      // },
       {
         name: "Sensitive Skin Repair Efficacy",
         price: 1680,
@@ -96,23 +96,23 @@ const nails_service_list: LanguageServices = {
         bulk: "$990（5次）",
         description: "祛黑头粉刺，深层清洁皮肤",
       },
-      {
-        name: "光子嫩肤",
-        price: 399,
-        bulk: "$1750（5次）",
-        description: "提高肤色，淡化痘印，祛痘祛敏，缓解色斑",
-      },
+      // {
+      //   name: "光子嫩肤",
+      //   price: 399,
+      //   bulk: "$1750（5次）",
+      //   description: "提高肤色，淡化痘印，祛痘祛敏，缓解色斑",
+      // },
       {
         name: "无感祛斑",
         price: 2800,
         special: "含：8次美容，1套护肤产品",
       },
-      {
-        name: "蜂巢皮秒祛斑",
-        price: 550,
-        description: "祛除黄褐斑，痣，老年斑，雀斑",
-        special: "每月做一次，送修复面膜",
-      },
+      // {
+      //   name: "蜂巢皮秒祛斑",
+      //   price: 550,
+      //   description: "祛除黄褐斑，痣，老年斑，雀斑",
+      //   special: "每月做一次，送修复面膜",
+      // },
       {
         name: "敏感肌修复管理",
         price: 1680,

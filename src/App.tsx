@@ -23,10 +23,11 @@ const router = createBrowserRouter([
         path: "/lash-Extensions",
         element: <LashExtensions />,
       },
-      {
-        path: "/permanent-makeup",
-        element: <PermanentMakeup />,
-      },
+      //temp removal
+      // {
+      //   path: "/permanent-makeup",
+      //   element: <PermanentMakeup />,
+      // },
       {
         path: "/manicure",
         element: <Manicure />,
